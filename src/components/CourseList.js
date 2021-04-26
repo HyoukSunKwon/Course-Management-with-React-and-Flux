@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const renderRow = (course) => {
   return (
     <tr key={course.id}>
-      <td> {course.title} </td>
+      <td>{course.title}</td>
       <td> {course.authorId} </td>
       <td> {course.category} </td>
     </tr>
@@ -21,12 +21,12 @@ function CourseList(props) {
           <th>Category</th>
         </tr>
       </thead>
-      <tbody>{courses.map(renderRow)}</tbody>
+      <tbody>{props.courses.map(renderRow)}</tbody>
     </table>
   );
 }
 
-CourseList.proptypes = {
+CourseList.propTypes = {
   courses: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
